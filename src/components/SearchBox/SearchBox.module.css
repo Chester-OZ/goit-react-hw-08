@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding-bottom: 30px;
+}
+
+.container input {
+  width: 100%;
+  outline: none;
+  margin: 0 auto;
+  font-size: 18px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  background-color: #fafafa;
+  transition: border 0.2s ease;
+  color: rgb(170, 170, 170);
+  border: none;
+}
+
+.container label {
+  text-align: start;
+  padding-left: 20px;
+}
