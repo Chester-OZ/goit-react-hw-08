@@ -14,16 +14,11 @@ export default function ContactForm({ addContact }) {
     name: Yup.string()
       .min(2, 'is too short!')
       .max(50, 'is too long!')
-      .required('not found'),
+      .required('is required'),
 
     number: Yup.string()
-      .min(3, 'is too short')
-      .max(50, 'is too long')
-      .matches(
-        /^(?!-)(?!.*--)[0-9]+(-[0-9]+)*$/,
-        'Only numbers divided by dashes are accepted here'
-      )
-      .required('not found'),
+      .matches(/^\+380\d{9}$/, 'must be in +380XXXXXXXXX format')
+      .required('is required'),
   })
 
   const [isSubmitted, setIsSubmitted] = useState(false)

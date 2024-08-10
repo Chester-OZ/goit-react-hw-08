@@ -14,8 +14,12 @@
   border-radius: 10px;
   background-color: #fafafa;
   transition: border 0.2s ease;
-  color: rgb(170, 170, 170);
+  color: rgb(140, 140, 140);
   border: none;
+}
+
+.container input::placeholder {
+  color: rgb(200, 200, 200);
 }
 
 .container label {

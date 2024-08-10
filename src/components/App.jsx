@@ -18,8 +18,8 @@ export default function App() {
     return savedContacts !== null ? JSON.parse(savedContacts) : initialContacts
   }
 
-  const [filter, setFilter] = useState('')
   const [contactList, setContactList] = useState(getContactsLS)
+  const [filter, setFilter] = useState('')
 
   const filterContacts = contactList.filter((contact) =>
     contact.name.toLowerCase().includes(filter.toLowerCase())

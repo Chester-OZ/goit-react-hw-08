@@ -14,8 +14,12 @@
   border-radius: 10px;
   background-color: #fafafa;
   transition: border 0.2s ease;
-  color: rgb(170, 170, 170);
+  color: rgb(140, 140, 140);
   border: none;
+}
+
+.form input::placeholder {
+  color: rgb(200, 200, 200);
 }
 
 .form label {
@@ -26,8 +30,16 @@
 }
 
 .form button {
-  width: 33%;
+  width: 30%;
   margin: 10px auto 0;
+  transition: color 0.2s ease;
+  padding: 10px 15px;
+}
+
+.form button:hover {
+  color: #fafafa;
+  background-color: rgba(149, 255, 149, 0.774);
+  box-shadow: 10px 10px 5px rgba(200, 200, 200, 0.056);
 }
 
 .nameWrap {
@@ -48,7 +60,7 @@
   left: 69px;
   font-size: 16px;
   position: absolute;
-  color: rgb(255, 190, 190);
+  color: rgb(255, 135, 135);
 }
 
 .numberError {
@@ -59,9 +71,9 @@
   top: -100px;
   left: 210px;
   width: 100%;
-  font-size: 15px;
+  font-size: 16px;
   margin-top: 12px;
   position: absolute;
-  color: rgb(184, 255, 184);
+  color: rgb(181, 255, 181);
   transform: translate(-50%, -50%);
 }

@@ -15,7 +15,11 @@ export default function Contact({ name, number, id, deleteContact }) {
           {number}
         </p>
       </div>
-      <button type="button" onClick={() => deleteContact(id)}>
+      <button
+        className={css.button}
+        type="button"
+        onClick={() => deleteContact(id)}
+      >
         Delete
       </button>
     </li>
