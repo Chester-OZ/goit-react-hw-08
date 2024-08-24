@@ -1,5 +1,6 @@
 import { FaUser } from 'react-icons/fa'
 import { FaPhone } from 'react-icons/fa6'
+import { IoIosRemoveCircle } from 'react-icons/io'
 import css from './Contact.module.css'
 
 export default function Contact({ name, number, id, deleteContact }) {
@@ -20,7 +21,7 @@ export default function Contact({ name, number, id, deleteContact }) {
         type="button"
         onClick={() => deleteContact(id)}
       >
-        Delete
+        <IoIosRemoveCircle />
       </button>
     </li>
   )

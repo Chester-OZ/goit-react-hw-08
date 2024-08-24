@@ -11,15 +11,17 @@
   margin: 0 auto;
   font-size: 18px;
   padding: 12px 20px;
-  border-radius: 10px;
-  background-color: #fafafa;
+  border-radius: 12px;
+  background-color: #ffffff;
   transition: border 0.2s ease;
-  color: rgb(140, 140, 140);
-  border: none;
+  caret-color: #a1a8b4;
+  border: 1px solid #c5cad1;
+  box-shadow: rgba(58, 61, 64, 0.09) 0px 10px 20px 10px;
 }
 
 .form input::placeholder {
-  color: rgb(200, 200, 200);
+  font-size: 14px;
+  color: #a1a8b4;
 }
 
 .form label {
@@ -30,6 +32,9 @@
 }
 
 .form button {
+  color: #ffffff;
+  background-color: #3578ea;
+  border-radius: 25px;
   width: 30%;
   margin: 10px auto 0;
   transition: color 0.2s ease;
@@ -37,9 +42,8 @@
 }
 
 .form button:hover {
-  color: #fafafa;
-  background-color: rgba(149, 255, 149, 0.774);
-  box-shadow: 10px 10px 5px rgba(200, 200, 200, 0.056);
+  background-color: #6167ff;
+  box-shadow: rgba(58, 61, 64, 0.047) 0px 10px 20px 10px;
 }
 
 .nameWrap {
@@ -60,7 +64,7 @@
   left: 69px;
   font-size: 16px;
   position: absolute;
-  color: rgb(255, 135, 135);
+  color: #ea3535;
 }
 
 .numberError {
@@ -74,6 +78,6 @@
   font-size: 16px;
   margin-top: 12px;
   position: absolute;
-  color: rgb(181, 255, 181);
+  color: rgb(31, 192, 31);
   transform: translate(-50%, -50%);
 }
