@@ -8,17 +8,19 @@ export default function Contact({ name, number, id, deleteContact }) {
       <div className={css.userIcon}>
         <FaUserNinja />
       </div>
-      <div className={css.contact}>
-        <p>{name}</p>
-        <p>{number}</p>
+      <div className={css.container}>
+        <div className={css.contact}>
+          <p>{name}</p>
+          <p className={css.numberText}>{number}</p>
+        </div>
+        <button
+          className={css.button}
+          type="button"
+          onClick={() => deleteContact(id)}
+        >
+          <IoIosRemoveCircle />
+        </button>
       </div>
-      <button
-        className={css.button}
-        type="button"
-        onClick={() => deleteContact(id)}
-      >
-        <IoIosRemoveCircle />
-      </button>
     </li>
   )
 }

@@ -24,15 +24,16 @@
 .contact {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-  padding-right: 157px;
 }
 
 .contact p {
   display: flex;
   align-items: center;
   gap: 12px;
+}
+
+.numberText {
+  color: #a1a8b4;
 }
 
 .contact p > svg {
@@ -57,4 +58,10 @@
 
 .button svg:hover {
   color: #ff3131;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
