@@ -1,10 +1,10 @@
 import css from './SearchBox.module.css'
 import { FaSearch } from 'react-icons/fa'
 import { useDispatch, useSelector } from 'react-redux'
-import { onFilter, selectFilter } from '../../redux/filtersSlice'
+import { changeFilter, selectNameFilter } from '../../redux/filtersSlice'
 
 export default function SearchBox() {
-  const currentInput = useSelector(selectFilter)
+  const currentInput = useSelector(selectNameFilter)
   const dispatch = useDispatch()
   return (
     <div className={css.container}>
@@ -17,7 +17,7 @@ export default function SearchBox() {
         type="text"
         placeholder="Search contacts"
         value={currentInput}
-        onChange={(e) => dispatch(onFilter(e.target.value))}
+        onChange={(e) => dispatch(changeFilter(e.target.value))}
       />
     </div>
   )
