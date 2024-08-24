@@ -3,10 +3,11 @@ import { FaUser } from 'react-icons/fa'
 import { FaPhone } from 'react-icons/fa6'
 import * as Yup from 'yup'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
-import { nanoid } from 'nanoid'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { addContact } from '../../redux/contactsSlice'
 
-export default function ContactForm({ addContact }) {
+export default function ContactForm() {
   const initialValues = {
     name: '',
     number: '',
@@ -24,12 +25,10 @@ export default function ContactForm({ addContact }) {
   })
 
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const dispatch = useDispatch()
   const handleSubmit = (values, actions) => {
-    const newContact = {
-      ...values,
-      id: nanoid(),
-    }
-    addContact(newContact)
+    dispatch(addContact(values))
+
     actions.resetForm()
     setIsSubmitted(true)
     setTimeout(() => {

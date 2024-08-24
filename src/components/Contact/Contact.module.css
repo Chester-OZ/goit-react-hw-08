@@ -48,6 +48,7 @@
   transition: color 0.2s ease;
   padding: 4px 4px;
   background-color: #ffffff;
+  outline: none;
 }
 
 .button svg {
@@ -57,6 +58,10 @@
 }
 
 .button svg:hover {
+  color: #ff3131;
+}
+
+.button:focus-within > svg {
   color: #ff3131;
 }
 

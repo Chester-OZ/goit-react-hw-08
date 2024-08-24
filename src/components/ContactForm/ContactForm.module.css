@@ -39,9 +39,11 @@
   margin: 10px auto 0;
   transition: color 0.2s ease;
   padding: 10px 15px;
+  outline: none;
 }
 
-.form button:hover {
+.form button:hover,
+.form button:focus {
   background-color: #6167ff;
 }
 

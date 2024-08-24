@@ -1,8 +1,11 @@
+import css from './Contact.module.css'
 import { FaUserNinja } from 'react-icons/fa'
 import { IoIosRemoveCircle } from 'react-icons/io'
-import css from './Contact.module.css'
+import { useDispatch } from 'react-redux'
+import { deleteContact } from '../../redux/contactsSlice'
 
-export default function Contact({ name, number, id, deleteContact }) {
+export default function Contact({ name, number, id }) {
+  const dispatch = useDispatch()
   return (
     <li className={css.item}>
       <div className={css.userIcon}>
@@ -16,7 +19,7 @@ export default function Contact({ name, number, id, deleteContact }) {
         <button
           className={css.button}
           type="button"
-          onClick={() => deleteContact(id)}
+          onClick={() => dispatch(deleteContact(id))}
         >
           <IoIosRemoveCircle />
         </button>
