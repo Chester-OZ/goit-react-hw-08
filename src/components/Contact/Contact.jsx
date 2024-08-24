@@ -1,20 +1,16 @@
-import { FaUser } from 'react-icons/fa'
-import { FaPhone } from 'react-icons/fa6'
+import { FaUserNinja } from 'react-icons/fa'
 import { IoIosRemoveCircle } from 'react-icons/io'
 import css from './Contact.module.css'
 
 export default function Contact({ name, number, id, deleteContact }) {
   return (
     <li className={css.item}>
+      <div className={css.userIcon}>
+        <FaUserNinja />
+      </div>
       <div className={css.contact}>
-        <p>
-          <FaUser />
-          {name}
-        </p>
-        <p>
-          <FaPhone />
-          {number}
-        </p>
+        <p>{name}</p>
+        <p>{number}</p>
       </div>
       <button
         className={css.button}

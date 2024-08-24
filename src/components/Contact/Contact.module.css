@@ -1,17 +1,32 @@
 .item {
   display: flex;
-  justify-content: space-between;
+
   align-items: center;
   border: 1px solid #c5cad1;
+  background-color: #ffffff;
   border-radius: 10px;
   padding: 5px 15px;
   min-height: 70px;
 }
+
+.userIcon {
+  display: flex;
+  padding-right: 20px;
+  color: #508afb;
+  align-items: center;
+}
+
+.userIcon svg {
+  width: 40px;
+  height: 40px;
+}
+
 .contact {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 4px;
+  padding-right: 157px;
 }
 
 .contact p {
@@ -21,17 +36,17 @@
 }
 
 .contact p > svg {
-  color: #3578ea;
+  color: #508afb;
 }
 
 .button {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ffffff;
   border-radius: 25px;
   transition: color 0.2s ease;
   padding: 4px 4px;
+  background-color: #ffffff;
 }
 
 .button svg {

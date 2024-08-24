@@ -1,7 +1,9 @@
+import css from './ContactForm.module.css'
+import { FaUser } from 'react-icons/fa'
+import { FaPhone } from 'react-icons/fa6'
 import * as Yup from 'yup'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { nanoid } from 'nanoid'
-import css from './ContactForm.module.css'
 import { useState } from 'react'
 
 export default function ContactForm({ addContact }) {
@@ -43,6 +45,9 @@ export default function ContactForm({ addContact }) {
     >
       <Form className={css.form}>
         <div className={css.nameWrap}>
+          <div className={css.faUser}>
+            <FaUser />
+          </div>
           <label htmlFor="name">Name</label>
           <Field name="name" id="name" placeholder="You name"></Field>
           <ErrorMessage
@@ -52,6 +57,9 @@ export default function ContactForm({ addContact }) {
           />
         </div>
         <div className={css.numberWrap}>
+          <div className={css.faPhone}>
+            <FaPhone />
+          </div>
           <label htmlFor="number">Number</label>
           <Field
             type="tel"
