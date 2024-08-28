@@ -5,7 +5,7 @@ import * as Yup from 'yup'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addContact } from '../../redux/contactsSlice'
+import { addContact } from '../../redux/contactsOps.js'
 
 export default function ContactForm() {
   const initialValues = {
@@ -20,7 +20,10 @@ export default function ContactForm() {
       .required('is required'),
 
     number: Yup.string()
-      .matches(/^\+380\d{9}$/, 'must be in +380XXXXXXXXX format')
+      .matches(
+        /^(?!-)(?!.*--)[0-9]+(-[0-9]+)*$/,
+        'Only numbers separated by dashes'
+      )
       .required('is required'),
   })
 

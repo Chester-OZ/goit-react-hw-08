@@ -2,10 +2,11 @@ import css from './Contact.module.css'
 import { FaUserNinja } from 'react-icons/fa'
 import { IoIosRemoveCircle } from 'react-icons/io'
 import { useDispatch } from 'react-redux'
-import { deleteContact } from '../../redux/contactsSlice'
+import { deleteContact } from '../../redux/contactsOps.js'
 
 export default function Contact({ name, number, id }) {
   const dispatch = useDispatch()
+
   return (
     <li className={css.item}>
       <div className={css.userIcon}>
