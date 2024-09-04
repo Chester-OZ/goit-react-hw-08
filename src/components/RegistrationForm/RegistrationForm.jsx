@@ -46,7 +46,7 @@ export default function RegistrationForm() {
         validateOnBlur={false}
       >
         <Form className={css.form}>
-          <label htmlFor="name">Your name</label>
+          <label htmlFor="name">Name</label>
           <Field name="name" id="name" placeholder="Type your name"></Field>
           <div className={css.usernameErrorWrapper}>
             <ErrorMessage
