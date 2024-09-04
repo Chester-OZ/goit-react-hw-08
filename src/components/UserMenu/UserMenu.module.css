@@ -1,0 +1,22 @@
+.userMenu {
+  color: rgb(34, 31, 222);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  li {
+    padding: 10px;
+  }
+}
+
+.userMenu button {
+  border: none;
+  color: rgb(195, 195, 195);
+  background: transparent;
+  padding: 0;
+  transition: color 0.2s ease;
+
+  &:hover {
+    border: none;
+    color: rgb(236, 189, 189);
+  }
+}

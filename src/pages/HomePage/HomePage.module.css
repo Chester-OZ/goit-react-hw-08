@@ -1,0 +1,11 @@
+.home p {
+  margin-top: 30px;
+  font-size: 20px;
+  padding: 0 20px;
+  max-width: 390px;
+  font-size: 18px;
+}
+
+.message {
+  color: #172640;
+}

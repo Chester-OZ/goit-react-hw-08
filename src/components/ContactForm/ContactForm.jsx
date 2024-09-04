@@ -3,9 +3,8 @@ import { FaUser } from 'react-icons/fa'
 import { FaPhone } from 'react-icons/fa6'
 import * as Yup from 'yup'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
-import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { addContact } from '../../redux/contactsOps.js'
+import { addContact } from '../../redux/contacts/operations'
 
 export default function ContactForm() {
   const initialValues = {
@@ -24,19 +23,15 @@ export default function ContactForm() {
         /^(?!-)(?!.*--)[0-9]+(-[0-9]+)*$/,
         'Only numbers separated by dashes'
       )
+      .min(3, 'is too short!')
+      .max(32, 'is too long!')
       .required('is required'),
   })
 
-  const [isSubmitted, setIsSubmitted] = useState(false)
   const dispatch = useDispatch()
   const handleSubmit = (values, actions) => {
     dispatch(addContact(values))
-
     actions.resetForm()
-    setIsSubmitted(true)
-    setTimeout(() => {
-      setIsSubmitted(false)
-    }, 2500)
   }
 
   return (
@@ -74,11 +69,6 @@ export default function ContactForm() {
             name="number"
             component="span"
           />
-          {isSubmitted && (
-            <span className={css.successMessage}>
-              Contact successfully added
-            </span>
-          )}
         </div>
 
         <button type="submit">Add contact</button>
