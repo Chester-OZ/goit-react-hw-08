@@ -11,7 +11,7 @@ export default function UserMenu() {
       <nav>
         <ul className={css.userMenu}>
           <li>
-            <p>User: {user.name}</p>
+            <p className={css.backgroundUser}>User: {user.name}</p>
           </li>
           <li>
             <button onClick={() => dispatch(logoutUser())}>Logout</button>

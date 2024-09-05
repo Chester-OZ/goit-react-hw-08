@@ -1,16 +1,11 @@
 .formWrapper {
   margin-top: 40px;
-  min-width: 300px;
   padding: 20px;
   border: 1px solid #c5cad1;
   border-radius: 16px;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
 }
 
 .form {
-  gap: 10px;
   display: flex;
   flex-direction: column;
 }
@@ -19,7 +14,7 @@
   max-width: 320px;
   font-size: 18px;
   color: #3578ea;
-  margin: 0 auto 10px;
+  margin: 0 auto 20px;
 }
 
 .form button {
@@ -38,6 +33,25 @@
   background-color: #6167ff;
 }
 
+.nameWrap,
+.emailWrap,
+.passwordWrap {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.faUser,
+.mdEmail,
+.riLockPasswordFill {
+  display: flex;
+  position: absolute;
+  top: 39px;
+  left: 15px;
+  color: #508afb;
+  align-items: center;
+}
+
 .form label {
   display: block;
   text-align: start;
@@ -48,7 +62,7 @@
 .form input {
   width: 100%;
   outline: none;
-  margin: 0 auto;
+  margin: 0 auto 15px;
   font-size: 18px;
   padding: 12px 35px;
   border-radius: 12px;
@@ -64,18 +78,19 @@
   color: #a1a8b4;
 }
 
-.emailErrorWrapper,
-.passwordErrorWrapper,
-.usernameErrorWrapper {
-  position: relative;
-}
-
 .emailError,
 .passwordError,
 .usernameError {
-  top: -6px;
-  left: 10px;
-  font-size: 15px;
+  left: 80px;
+  font-size: 16px;
   position: absolute;
-  color: rgb(255, 190, 190);
+  color: #ea3535;
+}
+
+.usernameError {
+  left: 82px;
+}
+
+.passwordError {
+  left: 112px;
 }

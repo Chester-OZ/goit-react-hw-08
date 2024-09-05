@@ -1,4 +1,6 @@
 import css from './LoginForm.module.css'
+import { MdEmail } from 'react-icons/md'
+import { RiLockPasswordFill } from 'react-icons/ri'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { useDispatch } from 'react-redux'
@@ -17,11 +19,11 @@ export default function LoginForm() {
 
   const loginSchema = Yup.object().shape({
     email: Yup.string()
-      .email('Invalid email format')
-      .max(50, 'Email is too long')
-      .required('Please enter your email'),
+      .email('invalid format')
+      .max(50, 'is too long')
+      .required('is required'),
 
-    password: Yup.string().required('Please enter your password'),
+    password: Yup.string().required('is required'),
   })
 
   const handleSubmit = (values, options) => {
@@ -40,23 +42,33 @@ export default function LoginForm() {
         validateOnBlur={false}
       >
         <Form className={css.form}>
-          <label htmlFor="email">Email</label>
-          <Field name="email" id="email" placeholder="Type your email"></Field>
-          <div className={css.emailErrorWrapper}>
+          <div className={css.emailWrap}>
+            <div className={css.mdEmail}>
+              <MdEmail />
+            </div>
+            <label htmlFor="email">Email</label>
+            <Field
+              name="email"
+              id="email"
+              placeholder="Type your email"
+            ></Field>
             <ErrorMessage
               className={css.emailError}
               name="email"
               component="span"
             />
           </div>
-          <label htmlFor="password">Password</label>
-          <Field
-            name="password"
-            id="password"
-            type="password"
-            placeholder="Type your password"
-          ></Field>
-          <div className={css.passwordErrorWrapper}>
+          <div className={css.passwordWrap}>
+            <div className={css.riLockPasswordFill}>
+              <RiLockPasswordFill />
+            </div>
+            <label htmlFor="password">Password</label>
+            <Field
+              name="password"
+              id="password"
+              type="password"
+              placeholder="Type your password"
+            ></Field>
             <ErrorMessage
               className={css.passwordError}
               name="password"
@@ -65,9 +77,7 @@ export default function LoginForm() {
           </div>
           <button type="submit">Log in</button>
           {error && (
-            <p className={css.requestError}>
-              Please, check your credentials...
-            </p>
+            <p className={css.requestError}>Please check your credentials...</p>
           )}
         </Form>
       </Formik>

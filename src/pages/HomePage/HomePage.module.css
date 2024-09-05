@@ -1,11 +1,23 @@
-.home p {
-  margin-top: 30px;
-  font-size: 20px;
-  padding: 0 20px;
-  max-width: 390px;
-  font-size: 18px;
+.home {
+  display: flex;
+  justify-content: center;
 }
 
-.message {
-  color: #172640;
+.home p {
+  width: 400px;
+  margin-top: 30px;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 0 20px;
+  background: linear-gradient(
+    210deg,
+    #508afb 10%,
+    #6167ff 30%,
+    #8a61ff 60%,
+    #8f00ff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
 }

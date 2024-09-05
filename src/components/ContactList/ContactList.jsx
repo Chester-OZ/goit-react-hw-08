@@ -12,6 +12,7 @@ import {
   selectError,
   selectLoading,
 } from '../../redux/contacts/selectors'
+import Loader from '../Loader/Loader'
 
 export default function ContactList() {
   const dispatch = useDispatch()
@@ -45,10 +46,9 @@ export default function ContactList() {
   }, [isAdded, isDeleted, showMessage])
 
   const getMessage = () =>
-    isLoading ? 'Loading...' : isError ? 'Something went wrong...' : message
+    isLoading ? <Loader /> : isError ? 'Something went wrong...' : message
 
   const messageStyle = clsx(css.message, {
-    [css.loading]: isLoading,
     [css.error]: isError,
     [css.added]: message === 'Contact added',
     [css.deleted]: message === 'Contact deleted',

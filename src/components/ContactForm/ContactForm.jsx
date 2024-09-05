@@ -14,14 +14,14 @@ export default function ContactForm() {
 
   const contactSchema = Yup.object().shape({
     name: Yup.string()
-      .min(2, 'is too short!')
-      .max(50, 'is too long!')
+      .min(2, 'is too short')
+      .max(50, 'is too long')
       .required('is required'),
 
     number: Yup.string()
       .matches(
         /^(?!-)(?!.*--)[0-9]+(-[0-9]+)*$/,
-        'Only numbers separated by dashes'
+        'only numbers separated by dashes'
       )
       .min(3, 'is too short!')
       .max(32, 'is too long!')

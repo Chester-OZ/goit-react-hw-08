@@ -1,4 +1,7 @@
 import css from './RegistrationForm.module.css'
+import { FaUser } from 'react-icons/fa'
+import { MdEmail } from 'react-icons/md'
+import { RiLockPasswordFill } from 'react-icons/ri'
 import { Formik, Field, Form, ErrorMessage } from 'formik'
 import * as Yup from 'yup'
 import { useDispatch } from 'react-redux'
@@ -15,19 +18,19 @@ export default function RegistrationForm() {
 
   const registrationSchema = Yup.object().shape({
     name: Yup.string()
-      .min(2, 'Name is too short!')
-      .max(50, 'Name is too long!')
-      .required('Please enter your name'),
+      .min(2, 'is too short')
+      .max(50, 'is too long')
+      .required('is required'),
 
     email: Yup.string()
-      .email('Invalid email format')
-      .max(50, 'Email is too long')
-      .required('Please enter your email'),
+      .email('invalid format')
+      .max(50, 'is too long')
+      .required('is required'),
 
     password: Yup.string()
-      .min(6, 'Password is too short')
-      .max(50, 'Password is too long')
-      .required('Please enter your password'),
+      .min(6, 'is too short')
+      .max(50, 'is too long')
+      .required('is required'),
   })
 
   const handleSubmit = (values, options) => {
@@ -46,32 +49,48 @@ export default function RegistrationForm() {
         validateOnBlur={false}
       >
         <Form className={css.form}>
-          <label htmlFor="name">Name</label>
-          <Field name="name" id="name" placeholder="Type your name"></Field>
-          <div className={css.usernameErrorWrapper}>
+          <div className={css.nameWrap}>
+            <div className={css.faUser}>
+              <FaUser />
+            </div>
+            <label htmlFor="name">Name</label>
+            <Field name="name" id="name" placeholder="Type your name"></Field>
+
             <ErrorMessage
               className={css.usernameError}
               name="name"
               component="span"
             />
           </div>
-          <label htmlFor="email">Email</label>
-          <Field name="email" id="email" placeholder="Type your email"></Field>
-          <div className={css.emailErrorWrapper}>
+          <div className={css.emailWrap}>
+            <div className={css.mdEmail}>
+              <MdEmail />
+            </div>
+            <label htmlFor="email">Email</label>
+            <Field
+              name="email"
+              id="email"
+              placeholder="Type your email"
+            ></Field>
+
             <ErrorMessage
               className={css.emailError}
               name="email"
               component="span"
             />
           </div>
-          <label htmlFor="password">Password</label>
-          <Field
-            name="password"
-            id="password"
-            type="password"
-            placeholder="Type your password"
-          ></Field>
-          <div className={css.passwordErrorWrapper}>
+          <div className={css.passwordWrap}>
+            <div className={css.riLockPasswordFill}>
+              <RiLockPasswordFill />
+            </div>
+            <label htmlFor="password">Password</label>
+            <Field
+              name="password"
+              id="password"
+              type="password"
+              placeholder="Type your password"
+            ></Field>
+
             <ErrorMessage
               className={css.passwordError}
               name="password"

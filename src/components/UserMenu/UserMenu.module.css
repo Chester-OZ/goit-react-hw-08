@@ -1,5 +1,4 @@
 .userMenu {
-  color: rgb(34, 31, 222);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,15 +8,29 @@
   }
 }
 
+.backgroundUser {
+  background: linear-gradient(
+    210deg,
+    #508afb 10%,
+    #6167ff 30%,
+    #8a61ff 60%,
+    #8f00ff 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
 .userMenu button {
   border: none;
-  color: rgb(195, 195, 195);
+  color: #c5cad1;
   background: transparent;
   padding: 0;
   transition: color 0.2s ease;
 
   &:hover {
     border: none;
-    color: rgb(236, 189, 189);
+    color: #ea3535;
   }
 }

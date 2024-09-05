@@ -8,9 +8,11 @@ export default function HomePage() {
   return (
     <div className={css.home}>
       {isLoggedIn ? (
-        <p>Welcome, {user.name}! This is your personal contact book.</p>
+        <p className={css.gradient}>
+          Welcome, {user.name}! <br></br> This is your personal contact book.
+        </p>
       ) : (
-        <p className={css.message}>
+        <p>
           Welcome to the contact book! <br></br>To continue, please sign in to
           your account or register.
         </p>
